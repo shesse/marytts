@@ -37,6 +37,7 @@ import marytts.exceptions.MaryConfigurationException;
 import marytts.util.MaryUtils;
 import marytts.util.dom.DomUtils;
 
+import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.traversal.NodeIterator;
@@ -44,6 +45,8 @@ import org.w3c.dom.traversal.NodeIterator;
 
 public class AllophoneSet
 {
+    private Logger logger = MaryUtils.getLogger(AllophoneSet.class);
+    
     private static Map<String, AllophoneSet> allophoneSets = new HashMap<String, AllophoneSet>();
 
     /** Return the allophone set specified by the given filename.
@@ -379,9 +382,12 @@ public class AllophoneSet
                 // have found a valid phone
                 phones.add(ph.name());
             } else {
-                throw new IllegalArgumentException("Found unknown symbol `" + 
+            	logger.warn("Found unknown symbol `" + 
                         allophoneString.charAt(i) +
                         "' in phonetic string `" + allophoneString + "' -- ignoring.");
+                //throw new IllegalArgumentException("Found unknown symbol `" + 
+                //        allophoneString.charAt(i) +
+                //        "' in phonetic string `" + allophoneString + "' -- ignoring.");
             }
         }
         return phones;

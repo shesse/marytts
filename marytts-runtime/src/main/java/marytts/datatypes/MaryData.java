@@ -406,7 +406,7 @@ public class MaryData
         }
         if (docLocale != null && voiceLocale != null &&
                 !(MaryUtils.subsumes(docLocale, voiceLocale) || MaryUtils.subsumes(voiceLocale, docLocale))) {
-            logger.warn("Voice `"+voice.getName()+"' does not match document locale `"+docLocale+"' -- ignoring!");
+            logger.debug("Voice `"+voice.getName()+"' does not match document locale `"+docLocale+"' -- ignoring!");
         }
         this.defaultVoice = voice;
     }
