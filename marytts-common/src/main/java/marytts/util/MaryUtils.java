@@ -487,6 +487,14 @@ public class MaryUtils {
     }
     
     /**
+     * 
+     */
+    public static void dispose()
+    {
+    	maintenanceTimer.cancel();
+    }
+    
+    /**
      * Normalise the Unicode text by mapping "exotic" punctuation characters to
      * "standard" ones.
      * @param unicodeText a string that may include "exotic" punctuation characters
