@@ -4,7 +4,7 @@
 
   <groupId>marytts</groupId>
   <artifactId>marytts</artifactId>
-  <version>5.1-dicos-1</version>
+  <version>5.1-dicos-2</version>
   <packaging>pom</packaging>
 
   <name>MARY TTS</name>
@@ -295,5 +295,5 @@
   	<artifactId>dicos-pom</artifactId>
   	<version>1.0</version>
   </parent>
-  <description>Maven modifications based on 5.1-dicos-1</description>
+  <description>Maven modifications based on 5.1-dicos-2</description>
 </project>
