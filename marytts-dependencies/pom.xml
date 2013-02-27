@@ -6,7 +6,7 @@
 	<parent>
 		<artifactId>marytts</artifactId>
 		<groupId>marytts</groupId>
-		<version>5.1-SNAPSHOT</version>
+		<version>5.1-dicos-1</version>
 	</parent>
 	<artifactId>marytts-dependencies</artifactId>
 	<name>marytts-dependencies</name>
@@ -35,6 +35,7 @@
 							<downloadUrl>
 								file:///${project.dependencyDirectory}/freetts.jar
 							</downloadUrl>
+    					    <force>false</force>
 						</artifactItem>
 
 						<artifactItem>
@@ -45,6 +46,7 @@
 							<downloadUrl>
 								file:///${project.dependencyDirectory}/freetts-de.jar
 							</downloadUrl>
+    					    <force>false</force>
 						</artifactItem>
 
 						<artifactItem>
@@ -55,6 +57,7 @@
 							<downloadUrl>
 								file:///${project.dependencyDirectory}/freetts-en_us.jar
 							</downloadUrl>
+    					    <force>false</force>
 						</artifactItem>
 
 						<!-- TODO: consider http://www.epic.noaa.gov/java/sgt/#rel30 -->
@@ -66,17 +69,19 @@
 							<downloadUrl>
 								file:///${project.dependencyDirectory}/sgt_v30.jar
 							</downloadUrl>
+    					    <force>false</force>
 						</artifactItem>
 
 						<artifactItem>
 							<groupId>gov.noaa.pmel.sgt</groupId>
-							<artifactId>sgt</artifactId>
+							<artifactId>sgt-src</artifactId>
 							<classifier>sources</classifier>
 							<version>3.0</version>
 							<packaging>jar</packaging>
 							<downloadUrl>
 								file:///${project.dependencyDirectory}/sgt_src_v30.jar
 							</downloadUrl>
+    					    <force>false</force>
 						</artifactItem>
 
 						<artifactItem>
@@ -87,28 +92,31 @@
 							<downloadUrl>
 								file:///${project.dependencyDirectory}/jtok-core-1.9.1-jar-with-dependencies.jar
 							</downloadUrl>
+    					    <force>false</force>
 						</artifactItem>
 
 						<artifactItem>
 							<groupId>de.dfki.lt.jtok</groupId>
-							<artifactId>jtok-core</artifactId>
+							<artifactId>jtok-core-src</artifactId>
 							<classifier>sources</classifier>
 							<version>1.9.1</version>
 							<packaging>jar</packaging>
 							<downloadUrl>
 								file:///${project.dependencyDirectory}/jtok-core-1.9.1-sources.jar
 							</downloadUrl>
+    					    <force>false</force>
 						</artifactItem>
 
 						<artifactItem>
 							<groupId>de.dfki.lt.jtok</groupId>
-							<artifactId>jtok-core</artifactId>
+							<artifactId>jtok-core-javadoc</artifactId>
 							<classifier>javadoc</classifier>
 							<version>1.9.1</version>
 							<packaging>jar</packaging>
 							<downloadUrl>
 								file:///${project.dependencyDirectory}/jtok-core-1.9.1-javadoc.jar
 							</downloadUrl>
+    					    <force>false</force>
 						</artifactItem>
 
 						<artifactItem>
@@ -119,49 +127,54 @@
 							<downloadUrl>
 								file:///${project.dependencyDirectory}/mwdumper-1.16.jar
 							</downloadUrl>
+    					    <force>false</force>
 						</artifactItem>
 
 						<artifactItem>
 							<groupId>org.wikimedia</groupId>
-							<artifactId>mwdumper</artifactId>
+							<artifactId>mwdumper-src</artifactId>
 							<classifier>sources</classifier>
 							<version>1.16</version>
 							<packaging>jar</packaging>
 							<downloadUrl>
 								file:///${project.dependencyDirectory}/mwdumper-1.16-sources.jar
 							</downloadUrl>
+    					    <force>false</force>
 						</artifactItem>
 
 						<artifactItem>
 							<groupId>org.wikimedia</groupId>
-							<artifactId>mwdumper</artifactId>
+							<artifactId>mwdumper-javadoc</artifactId>
 							<classifier>javadoc</classifier>
 							<version>1.16</version>
 							<packaging>jar</packaging>
 							<downloadUrl>
 								file:///${project.dependencyDirectory}/mwdumper-1.16-javadoc.jar
 							</downloadUrl>
+    					    <force>false</force>
 						</artifactItem>
 
 						<artifactItem>
 							<groupId>emotionml-checker-java</groupId>
 							<artifactId>emotionml-checker-java</artifactId>
-							<version>1.0-SNAPSHOT</version>
+							<version>1.0-SNAP</version>
 							<packaging>jar</packaging>
 							<downloadUrl>
 								file:///${project.dependencyDirectory}/emotionml-checker-java-1.0-SNAPSHOT.jar
 							</downloadUrl>
+    					    <force>false</force>
 						</artifactItem>
 
 						<artifactItem>
 							<groupId>emotionml-checker-java</groupId>
-							<artifactId>emotionml-checker-java</artifactId>
+							<artifactId>emotionml-checker-java-src</artifactId>
 							<classifier>sources</classifier>
-							<version>1.0-SNAPSHOT</version>
+							<version>1.0-SNAP</version>
 							<packaging>jar</packaging>
 							<downloadUrl>
 								file:///${project.dependencyDirectory}/emotionml-checker-java-1.0-SNAPSHOT-sources.jar
 							</downloadUrl>
+    					    <force>false</force>
 						</artifactItem>
 
 					</artifactItems>
@@ -190,7 +203,7 @@
 						<phase>deploy</phase>
 						<goals>
 							<!-- mvn com.savage7.maven.plugins:maven-external-dependency-plugin:deploy-external -->
-							<goal>deploy-external</goal>
+							<!-- <goal>deploy-external</goal> -->
 						</goals>
 					</execution>
 				</executions>
@@ -268,4 +281,5 @@
 		</pluginManagement>
 
 	</build>
+	<packaging>pom</packaging>
 </project>
