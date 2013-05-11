@@ -120,5 +120,15 @@ public class MixerDoubleDataSource extends BaseDoubleDataSource {
         return maxCopied;
     }
 
+	@Override
+	public void close() {
+		for (DoubleDataSource s: sources) {
+			s.close();
+		}
+		super.close();
+	}
+    
+    
+
 }
 

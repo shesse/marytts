@@ -80,5 +80,9 @@ public interface DoubleDataSource {
      * DoubleDataSource.NOT_SPECIFIED if unknown.
      */
     public long getDataLength();
-
+    
+    /**
+     * free all resources held by this DDS
+     */
+    public void close();
 }

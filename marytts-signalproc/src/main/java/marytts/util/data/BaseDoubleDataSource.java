@@ -156,5 +156,12 @@ public class BaseDoubleDataSource implements DoubleDataSource
         return dataLength;
     }
 
+	@Override
+	public void close() {
+		if (inputSource != null) {
+			inputSource.close();
+		}
+	}
+
 }
 

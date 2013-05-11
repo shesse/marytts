@@ -102,5 +102,17 @@ public class TextReaderDoubleDataSource extends BaseDoubleDataSource {
         return c != -1;
     }
 
+	@Override
+	public void close() {
+		try {
+			reader.close();
+		} catch (IOException e) {
+		}
+		
+		super.close();
+	}
+    
+    
+
 }
 

@@ -216,6 +216,17 @@ public class AudioDoubleDataSource extends BaseDoubleDataSource {
         if (frameLength == AudioSystem.NOT_SPECIFIED) return DoubleDataSource.NOT_SPECIFIED;
         else return frameLength;
     }
+
+	@Override
+	public void close() {
+		try {
+			ais.close();
+		} catch (IOException e) {
+		}
+		super.close();
+	}
+    
+    
     
 }
 

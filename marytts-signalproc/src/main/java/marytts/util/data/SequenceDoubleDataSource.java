@@ -103,5 +103,14 @@ public class SequenceDoubleDataSource extends BaseDoubleDataSource
         return copied;
     }
 
+	@Override
+	public void close() {
+		for (Object so: sources) {
+			((DoubleDataSource)so).close();
+		}
+		super.close();
+	}
+
+    
 }
 

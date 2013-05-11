@@ -77,7 +77,7 @@ public abstract class ProducingDoubleDataSource extends BufferedDoubleDataSource
         try {
             queue.put(value);
         } catch (InterruptedException e) {
-            throw new RuntimeException("Unexpected interruption", e);
+             throw new RuntimeException("Unexpected interruption", e);
         }
     }
     
@@ -174,4 +174,15 @@ public abstract class ProducingDoubleDataSource extends BufferedDoubleDataSource
     private boolean isAllProductionDataRead() {
         return hasReceivedEndOfStream;
     }
+
+	@Override
+	public void close() {
+		// finish the producer thread by reading all data
+		double[] buffer = new double[1024];
+		while (getData(buffer, 0, buffer.length) == buffer.length);
+		
+		super.close();
+	}
+    
+    
 }
