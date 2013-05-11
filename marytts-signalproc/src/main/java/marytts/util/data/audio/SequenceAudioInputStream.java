@@ -189,12 +189,12 @@ public class SequenceAudioInputStream
 
 
 
-	public void close()
-		throws	IOException
-	{
-		// TODO: should we close all streams in the list?
+	public void close() throws IOException {
+		for (AudioInputStream ais : m_audioInputStreamList) {
+			ais.close();
+		}
+		m_audioInputStreamList.clear();
 	}
-
 
 
 	public void mark(int nReadLimit)
